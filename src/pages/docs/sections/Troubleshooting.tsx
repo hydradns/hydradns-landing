@@ -17,7 +17,6 @@ export default function Troubleshooting() {
         { id: "router-fallback", label: "Router fallback DNS" },
         { id: "health", label: "Health checks" },
         { id: "logs", label: "Where the logs live" },
-        { id: "submodules", label: "Submodule headaches" },
       ]}
     >
       <h2 id="port-53">Port 53 on WSL / Linux</h2>
@@ -154,36 +153,6 @@ export default function Troubleshooting() {
         </li>
       </ul>
 
-      <h2 id="submodules">Submodule headaches</h2>
-      <p>
-        Each <code>apps/*</code> directory is its own Git repo. If someone
-        cloned the parent without <code>--recursive</code>, those directories
-        will be empty and Docker builds will fail with missing{" "}
-        <code>Dockerfile</code> errors. Fix:
-      </p>
-      <CodeBlock language="bash">{`# from the repo root
-git submodule update --init --recursive`}</CodeBlock>
-      <p>
-        If a submodule shows as dirty in the parent <code>git status</code>,
-        it usually means you&apos;ve committed inside the submodule but
-        haven&apos;t bumped the parent pointer to match. Confirm from the
-        submodule:
-      </p>
-      <CodeBlock language="bash">{`cd apps/<service>
-git status
-git log --oneline -5`}</CodeBlock>
-      <p>
-        Then from the parent repo, stage the new submodule commit and commit
-        it to pin the pointer:
-      </p>
-      <CodeBlock language="bash">{`git add apps/<service>
-git commit -m "bump <service> submodule"`}</CodeBlock>
-      <Callout variant="note">
-        <code>make update</code> automates the common case: it runs{" "}
-        <code>git submodule update --remote --merge</code> to pull the latest
-        upstream commit on each submodule&apos;s tracked branch. Use it when
-        you just want everything on current HEADs without manual cd-and-pull.
-      </Callout>
       <p>
         Still stuck? The <a href="/docs/architecture">Architecture</a> page
         covers the control-plane / data-plane split if a symptom feels like
