@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   Shield,
@@ -46,7 +47,7 @@ const features: Feature[] = [
   {
     icon: ListFilter,
     title: "Rules That Fit Your Network",
-    desc: "Exact domains, regex, priorities. Allow, block, redirect, or just log. Edits apply on the fly, no restarts.",
+    desc: "Exact domains and priorities. Allow, block, redirect, or just log. Edits apply on the fly, no restarts.",
   },
   {
     icon: FileText,
@@ -93,15 +94,13 @@ export function FeaturesSection() {
         </div>
 
         <div className="mt-10 text-center fade-in-up">
-          <a
-            href="https://docs.hydradns.app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/docs"
             className="inline-flex items-center gap-2 font-mono text-sm text-muted-foreground hover:text-brand-teal transition-colors"
           >
             The full feature list lives in the docs
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
