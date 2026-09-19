@@ -68,7 +68,7 @@ function FrontCard({ image, alt }: { image: string; alt: string }) {
           "0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(0,212,170,0.18)",
       }}
     >
-      <WindowChrome title="Dashboard · Overview" live />
+      <WindowChrome title="Dashboard · Overview" featured />
       <img src={image} alt={alt} className="block w-full" loading="lazy" />
     </div>
   );
@@ -114,13 +114,13 @@ function MobileCard({
         featured ? "glow-primary" : ""
       }`}
     >
-      <WindowChrome title={featured ? "Dashboard · Overview" : alt} live={featured} />
+      <WindowChrome title={featured ? "Dashboard · Overview" : alt} featured={featured} />
       <img src={image} alt={alt} className="block w-full" loading="lazy" />
     </div>
   );
 }
 
-function WindowChrome({ title, live }: { title: string; live?: boolean }) {
+function WindowChrome({ title, featured }: { title: string; featured?: boolean }) {
   return (
     <div className="flex items-center justify-between h-9 px-4 bg-surface-container-highest border-b border-outline-variant/20">
       <div className="flex items-center gap-1.5">
@@ -131,14 +131,10 @@ function WindowChrome({ title, live }: { title: string; live?: boolean }) {
       <span className="font-mono text-[10px] text-muted-foreground tracking-wide truncate max-w-[50%]">
         {title}
       </span>
-      {live ? (
+      {featured ? (
         <div className="flex items-center gap-1.5 px-2 py-0.5 rounded border border-outline-variant/30 bg-surface-container-lowest">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75 animate-ping" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-teal" />
-          </span>
-          <span className="font-mono text-[9px] font-semibold tracking-wider text-brand-teal">
-            LIVE
+          <span className="font-mono text-[9px] font-semibold tracking-wider text-muted-foreground">
+            SCREENSHOT
           </span>
         </div>
       ) : (
