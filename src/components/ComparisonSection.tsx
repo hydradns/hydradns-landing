@@ -14,12 +14,11 @@ type Row = {
 const rows: Row[] = [
   { feature: "Open Source", hydra: "GPL-3.0", pihole: true, nextdns: false, adguard: true },
   { feature: "Self-Hosted", hydra: true, pihole: true, nextdns: false, adguard: true },
-  { feature: "Policy Engine", hydra: "Priority + Regex", pihole: false, nextdns: "Limited", adguard: "Limited" },
+  { feature: "Priority-Ranked Policies", hydra: true, pihole: false, nextdns: false, adguard: false },
   { feature: "IP Anonymization", hydra: "HMAC-SHA256", pihole: false, nextdns: false, adguard: false },
   { feature: "Architecture", hydra: "Microservices + gRPC", pihole: "Monolith", nextdns: "Cloud SaaS", adguard: "Monolith" },
-  { feature: "Language", hydra: "Go", pihole: "PHP + Shell", nextdns: "N/A", adguard: "Go" },
-  { feature: "Hot-Reload Policies", hydra: true, pihole: false, nextdns: false, adguard: false },
-  { feature: "REST API", hydra: "17 endpoints", pihole: false, nextdns: true, adguard: "Limited" },
+  { feature: "Language", hydra: "Go", pihole: "C (FTL) + PHP", nextdns: "N/A", adguard: "Go" },
+  { feature: "REST API", hydra: true, pihole: "Yes (v6+)", nextdns: true, adguard: "Yes (OpenAPI)" },
   { feature: "Bloom Filter Engine", hydra: true, pihole: false, nextdns: false, adguard: false },
   { feature: "Your Data Stays Local", hydra: true, pihole: true, nextdns: false, adguard: true },
 ];
