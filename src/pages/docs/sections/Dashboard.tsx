@@ -121,8 +121,7 @@ export default function Dashboard() {
         classic use case is whitelisting a specific subdomain of an
         advertising network that a work tool actually needs to function,
         without tearing the whole network out of your blocklist. For the
-        deep dive on action semantics, regex support, and priority
-        ordering, see{" "}
+        deep dive on action semantics and priority ordering, see{" "}
         <a href="/docs/policies-and-blocklists">
           policies and blocklists
         </a>
