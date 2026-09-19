@@ -30,11 +30,11 @@ beforeAll(() => {
 });
 
 describe("RoiCalculatorSection", () => {
-  it("renders the section heading and a pricing CTA instead of a HydraDNS price", () => {
+  it("renders the section heading and a get-the-code CTA instead of a HydraDNS price", () => {
     render(<RoiCalculatorSection />);
     expect(screen.getByRole("heading", { name: /see what per-seat/i })).toBeInTheDocument();
 
-    expect(screen.getAllByRole("link", { name: /talk to us for pricing|get a quote/i })).not.toHaveLength(0);
+    expect(screen.getAllByRole("link", { name: /get the code/i })).not.toHaveLength(0);
     expect(screen.queryByTestId("roi-hydradns-annual")).not.toBeInTheDocument();
   });
 
