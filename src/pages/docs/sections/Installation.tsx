@@ -69,19 +69,17 @@ docker compose down           # stop`}</CodeBlock>
       </p>
       <CodeBlock language="bash">{`curl -fsSL https://raw.githubusercontent.com/hydradns/hydradns/main/scripts/install.sh | bash`}</CodeBlock>
       <p>
-        The script installs Docker if it&apos;s missing, clones the repo with
-        submodules, writes a sensible <code>.env</code>, and brings the stack
-        up. When it finishes, grab the Pi&apos;s LAN IP, point your
-        router&apos;s primary DNS at it, and you&apos;re protecting the whole
-        network.
+        The script installs Docker if it&apos;s missing, clones the repo,
+        writes a sensible <code>.env</code>, and brings the stack up. When it
+        finishes, grab the Pi&apos;s LAN IP, point your router&apos;s primary
+        DNS at it, and you&apos;re protecting the whole network.
       </p>
       <Callout variant="tip" title="Hardware sizing">
-        A Pi 4 with 2GB of RAM is the practical floor; a Pi 5 gives you the
-        best query latency and keeps 1ms cache hits realistic even under
-        load. The blocklist engine holds several million entries comfortably
-        in around <strong>200MB</strong> of RAM thanks to the Bloom filter
-        and interned string table, so you&apos;ve got plenty of headroom for
-        the rest of the stack.
+        A Pi 4 with 2GB of RAM is the practical floor; a Pi 5 has more
+        headroom for query load. Latency and memory figures elsewhere in
+        these docs are measured on development hardware (a laptop), not yet
+        benchmarked on a Pi &mdash; expect it to run comfortably, but treat
+        exact numbers as unverified on ARM until confirmed.
       </Callout>
 
       <h2 id="static-ip">Give the device a static IP</h2>
@@ -163,14 +161,12 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 1.1.1.1`}
 
       <h2 id="updating">Updating</h2>
       <p>
-        Each app under <code>apps/</code> is its own Git repository pulled in
-        as a submodule. The root repo pins each submodule to a specific
-        commit, so updates are a deliberate two-step: bump the submodules,
-        then rebuild whatever changed.
+        HydraDNS is a single monorepo, so updating is a plain pull followed
+        by a rebuild of whatever changed.
       </p>
       <p>From the repo root:</p>
-      <CodeBlock language="bash">{`make update        # git submodule update --remote --merge
-make build-core    # rebuild core if its submodule moved
+      <CodeBlock language="bash">{`make update        # git pull --ff-only
+make build-core    # rebuild core if it changed
 make restart-core  # swap the running container`}</CodeBlock>
       <p>
         The individual <code>build-*</code> and <code>restart-*</code>{" "}
