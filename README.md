@@ -1,73 +1,45 @@
-# Welcome to your Lovable project
+# HydraDNS Landing
 
-## Project info
+The marketing and docs site for [HydraDNS](https://github.com/hydradns/hydradns), a self-hosted DNS-layer security and privacy gateway. This is a standalone Vite + React + TypeScript + Tailwind app, kept in its own repo separate from the product monorepo.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Live at [hydradns.app](https://hydradns.app).
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Running locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Opens on `http://localhost:8080` by default (or `:3001` in the full stack's Docker Compose setup).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Outputs a static bundle to `dist/`, served in production behind Nginx (see `Dockerfile`).
 
-## What technologies are used for this project?
+## Test
 
-This project is built with:
+```sh
+npm run test        # vitest, single run
+npm run test:watch  # vitest, watch mode
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Lint
 
-## How can I deploy this project?
+```sh
+npm run lint
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Where things live
 
-## Can I connect a custom domain to my Lovable project?
+- `src/components/` — landing page sections (Hero, Features, Comparison, etc.)
+- `src/pages/docs/` — the `/docs` route: written documentation pages, rendered as React components, not a separate subdomain
+- `public/` — static assets, icons, and the social-preview image
 
-Yes, you can!
+## The main project
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The DNS engine, dashboard, CLI, and scanner live in the [hydradns/hydradns](https://github.com/hydradns/hydradns) monorepo. This repo only contains the marketing site and its docs content.
