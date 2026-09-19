@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Github, BookOpen, Shield, Code, Scale, Server, Lock } from "lucide-react";
 import { ParticleBackground } from "./ParticleBackground";
 
@@ -29,7 +30,7 @@ export function HeroSection() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-teal" />
               </span>
               <span className="font-mono text-xs text-muted-foreground tracking-wide">
-                v1.0 · GPL-3.0 · Self-hosted
+                GPL-3.0 · Self-hosted
               </span>
             </div>
 
@@ -59,15 +60,13 @@ export function HeroSection() {
                 <Github className="h-5 w-5" />
                 Get the code
               </a>
-              <a
-                href="https://docs.hydradns.app"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/docs"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-md border border-outline-variant/40 bg-surface-container/30 text-foreground font-medium hover:bg-surface-container-high/60 transition-colors"
               >
                 <BookOpen className="h-5 w-5 text-brand-sky" />
                 Read the Docs
-              </a>
+              </Link>
             </div>
 
             {/* Trust badges */}
@@ -100,21 +99,20 @@ export function HeroSection() {
                   </div>
                   <div className="flex items-center gap-1.5 px-2.5 py-1 rounded border border-outline-variant/30 bg-surface-container-lowest">
                     <span className="relative flex h-1.5 w-1.5">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-brand-teal opacity-75 animate-ping" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-teal" />
+                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
                     </span>
-                    <span className="font-mono text-[10px] font-semibold tracking-wider text-brand-teal">
-                      LIVE
+                    <span className="font-mono text-[10px] font-semibold tracking-wider text-muted-foreground">
+                      PREVIEW
                     </span>
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="p-5 space-y-4 bg-surface-container">
-                  {/* Stat tiles */}
+                  {/* Stat tiles (illustrative sample data) */}
                   <div className="grid grid-cols-2 gap-3">
-                    <StatTile label="Total Queries" value="124,847" tone="default" />
-                    <StatTile label="Blocked" value="18,293" tone="danger" />
+                    <StatTile label="Total Queries" value="12,480" tone="default" />
+                    <StatTile label="Blocked" value="1,860" tone="danger" />
                   </div>
 
                   <div className="flex items-center justify-between p-4 rounded-md bg-surface-container-low border border-outline-variant/20">
