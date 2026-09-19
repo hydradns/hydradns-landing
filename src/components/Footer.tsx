@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/hydradns-logo.png";
 
 const productLinks = [
@@ -9,7 +10,7 @@ const productLinks = [
 
 const communityLinks = [
   { label: "GitHub", href: "https://github.com/hydradns/hydradns" },
-  { label: "Documentation", href: "https://docs.hydradns.app" },
+  { label: "Documentation", href: "/docs" },
   { label: "Contributing", href: "https://github.com/hydradns/hydradns/blob/main/CONTRIBUTING.md" },
   { label: "Security", href: "https://github.com/hydradns/hydradns/security" },
   { label: "License (GPL-3.0)", href: "https://github.com/hydradns/hydradns/blob/main/LICENSE" },
@@ -66,18 +67,29 @@ function FooterColumn({
     <div>
       <p className="eyebrow mb-4">{title}</p>
       <ul className="space-y-2.5">
-        {links.map((link) => (
-          <li key={link.href}>
-            <a
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="text-sm text-muted-foreground hover:text-brand-sky transition-colors"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {links.map((link) =>
+          link.href.startsWith("http") ? (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-brand-sky transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ) : (
+            <li key={link.href}>
+              <Link
+                to={link.href}
+                className="text-sm text-muted-foreground hover:text-brand-sky transition-colors"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ),
+        )}
       </ul>
     </div>
   );
