@@ -48,15 +48,15 @@ export default function GettingStarted() {
 
       <h2 id="quick-start">60-second quick start</h2>
       <p>
-        You need Docker and Git. That&apos;s it. The stack ships as a
-        multi-repo monorepo wired together with submodules.
+        You need Docker and Git. That&apos;s it. HydraDNS ships as a single
+        monorepo, so there are no submodules to initialize.
       </p>
       <Steps>
-        <Step title="Clone with submodules">
+        <Step title="Clone the repo">
           <p>
-            The <code>--recursive</code> flag pulls every service at once:
+            It&apos;s one repository, so a plain clone gets everything:
           </p>
-          <CodeBlock language="bash">{`git clone --recursive https://github.com/hydradns/hydradns.git
+          <CodeBlock language="bash">{`git clone https://github.com/hydradns/hydradns.git
 cd hydradns`}</CodeBlock>
         </Step>
         <Step title="Start the stack">

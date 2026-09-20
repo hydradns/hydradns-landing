@@ -9,7 +9,7 @@ type Line =
 
 const lines: Line[] = [
   { kind: "comment", text: "# Clone and launch" },
-  { kind: "cmd", text: "git clone --recursive https://github.com/hydradns/hydradns.git" },
+  { kind: "cmd", text: "git clone https://github.com/hydradns/hydradns.git" },
   { kind: "cmd", text: "cd hydradns" },
   { kind: "cmd", text: "docker compose up -d" },
   { kind: "blank" },

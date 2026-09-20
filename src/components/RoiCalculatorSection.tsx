@@ -41,8 +41,8 @@ export function RoiCalculatorSection() {
           </h2>
           <p className="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground fade-in-up">
             Per-seat DNS security scales with your headcount — every device you add raises the
-            bill. HydraDNS is billed as one flat annual fee instead. Drag the count and watch
-            the gap grow.
+            bill. HydraDNS is free and self-hosted, so there's no per-seat bill at all. Drag
+            the count and watch the gap grow.
           </p>
         </div>
 
@@ -87,16 +87,16 @@ export function RoiCalculatorSection() {
               <span>{MAX_SEATS}+</span>
             </div>
 
-            {/* HydraDNS flat-fee positioning (no price published yet) */}
+            {/* HydraDNS is free, self-hosted OSS — no pricing tier or sales process exists */}
             <div className="mt-8 rounded-lg bg-brand-teal/[0.06] border border-brand-teal/30 glow-primary p-5">
               <p className="font-mono text-[10px] uppercase tracking-widest text-brand-teal">
-                HydraDNS · flat
+                HydraDNS · self-hosted
               </p>
               <p className="mt-1 font-headline text-2xl sm:text-3xl font-bold tracking-tightest text-gradient">
-                One annual fee
+                $0, you run it
               </p>
               <p className="mt-1 font-mono text-[11px] text-muted-foreground">
-                same price at 10 devices or 1,000 — not per seat
+                same cost at 10 devices or 1,000 — it's your hardware
               </p>
               <a
                 href={CTA_HREF}
@@ -105,15 +105,15 @@ export function RoiCalculatorSection() {
                 className="btn-primary mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold shadow-[0_0_20px_rgba(0,212,170,0.25)] hover:shadow-[0_0_28px_rgba(0,212,170,0.4)] transition-shadow"
               >
                 <Github className="h-4 w-4" />
-                Talk to us for pricing
+                Get the code
               </a>
             </div>
 
             <p className="mt-5 font-mono text-[10px] leading-relaxed text-muted-foreground">
               Competitor pricing is approximate published list price, converted at
               US$1 = ₹{USD_TO_INR} (FX rate as of Jul 2026 — checked periodically,
-              may drift). HydraDNS pricing isn't published yet — the rows below show what
-              you'd pay elsewhere.
+              may drift). HydraDNS is free, open-source software you self-host — the rows
+              below show what you'd pay for a hosted alternative instead.
             </p>
           </div>
 
@@ -129,14 +129,15 @@ export function RoiCalculatorSection() {
                   Every row below grows with headcount
                 </p>
                 <p className="mt-1 text-base sm:text-lg font-medium text-foreground leading-snug">
-                  HydraDNS doesn't. It's one flat fee — add devices for free.{" "}
+                  HydraDNS doesn't. It's free and self-hosted — add devices at no
+                  extra cost.{" "}
                   <a
                     href={CTA_HREF}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand-teal underline underline-offset-2 hover:text-brand-teal/80 transition-colors"
                   >
-                    Get a quote
+                    Get the code
                   </a>
                   .
                 </p>

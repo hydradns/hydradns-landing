@@ -58,7 +58,7 @@ export default function Mcp() {
   }
 }`}</CodeBlock>
       <p>
-        Restart Claude Code. The server registers 9 tools that the agent can
+        Restart Claude Code. The server registers 14 tools that the agent can
         call on demand.
       </p>
       <Callout variant="tip">
@@ -68,6 +68,11 @@ export default function Mcp() {
       </Callout>
 
       <h2 id="tools">Available tools</h2>
+      <p>
+        The nine below are the core status, policy, and log tools you&apos;ll
+        use most day to day. They&apos;re a subset of the full fourteen the
+        server registers.
+      </p>
       <table>
         <thead>
           <tr>
