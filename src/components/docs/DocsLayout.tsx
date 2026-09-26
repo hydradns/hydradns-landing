@@ -115,7 +115,7 @@ export function DocsLayout({
       <footer className="border-t border-outline-variant/30 mt-16 py-8">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} HydraDNS · GPL-3.0
+            © {new Date().getFullYear()} HydraDNS · Apache-2.0
           </p>
           <div className="flex items-center gap-5">
             <a

@@ -13,7 +13,7 @@ const communityLinks = [
   { label: "Documentation", href: "/docs" },
   { label: "Contributing", href: "https://github.com/hydradns/hydradns/blob/main/CONTRIBUTING.md" },
   { label: "Security", href: "https://github.com/hydradns/hydradns/security" },
-  { label: "License (GPL-3.0)", href: "https://github.com/hydradns/hydradns/blob/main/LICENSE" },
+  { label: "License (Apache-2.0)", href: "https://github.com/hydradns/hydradns/blob/main/LICENSE" },
 ];
 
 export function Footer() {
@@ -45,7 +45,7 @@ export function Footer() {
 
         <div className="mt-14 pt-6 border-t border-outline-variant/15 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-mono text-xs text-muted-foreground/70">
-            GPL-3.0 · Built in the open
+            Apache-2.0 · Built in the open
           </p>
           <p className="font-headline italic text-sm text-muted-foreground/70">
             Made with Go, gRPC, and paranoia.

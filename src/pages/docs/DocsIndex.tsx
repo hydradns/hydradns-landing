@@ -77,7 +77,7 @@ export default function DocsIndex() {
 
       <footer className="relative border-t border-outline-variant/30 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} HydraDNS · GPL-3.0</p>
+          <p>© {new Date().getFullYear()} HydraDNS · Apache-2.0</p>
           <div className="flex items-center gap-5">
             <a
               href="https://github.com/hydradns/hydradns"

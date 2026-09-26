@@ -12,7 +12,7 @@ type Row = {
 };
 
 const rows: Row[] = [
-  { feature: "Open Source", hydra: "GPL-3.0", pihole: true, nextdns: false, adguard: true },
+  { feature: "Open Source", hydra: "Apache-2.0", pihole: true, nextdns: false, adguard: true },
   { feature: "Self-Hosted", hydra: true, pihole: true, nextdns: false, adguard: true },
   { feature: "Priority-Ranked Policies", hydra: true, pihole: false, nextdns: false, adguard: false },
   { feature: "IP Anonymization", hydra: "HMAC-SHA256", pihole: false, nextdns: false, adguard: false },

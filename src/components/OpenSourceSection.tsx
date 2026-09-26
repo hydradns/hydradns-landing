@@ -20,7 +20,7 @@ export function OpenSourceSection() {
           <span className="text-gradient">Owned by the community.</span>
         </h2>
         <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto fade-in-up">
-          HydraDNS is GPL-3.0. The whole stack is on GitHub, nothing phones home,
+          HydraDNS is Apache-2.0. The whole stack is on GitHub, nothing phones home,
           and the roadmap lives in public issues. Fork it, break it, send a PR.
         </p>
 

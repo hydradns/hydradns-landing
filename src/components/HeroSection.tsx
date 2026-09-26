@@ -6,7 +6,7 @@ const sparklineData = [20, 35, 25, 45, 30, 60, 40, 75, 55, 90, 60, 78, 48, 82, 7
 
 const trustBadges = [
   { icon: Code, label: "Open Source" },
-  { icon: Scale, label: "GPL-3.0" },
+  { icon: Scale, label: "Apache-2.0" },
   { icon: Server, label: "Self-hosted" },
   { icon: Lock, label: "No data leaves your network" },
 ];
@@ -30,7 +30,7 @@ export function HeroSection() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-teal" />
               </span>
               <span className="font-mono text-xs text-muted-foreground tracking-wide">
-                GPL-3.0 · Self-hosted
+                Apache-2.0 · Self-hosted
               </span>
             </div>
 
